@@ -31,6 +31,17 @@ small, .font_small {font-size: 0.75em;}
 
 a {
   text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+article {
+  margin: 0.5em;
+}
+
+nav a {
   font-family: 'Dosis', sans-serif;
 }
 
@@ -56,9 +67,24 @@ nav:hover ul {
   nav ul {
     display: block;
     text-align: center;
+    margin: 0.5em;
   }
   nav li {
     display: inline-block;
     padding: 0 10px;
+  }
+  main {
+    margin: 0.5em;
+  }
+  hr {
+    display: none;
+  }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .desktop-view {
+    width: 30%;
   }
 }
