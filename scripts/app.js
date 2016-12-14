@@ -22,6 +22,14 @@ Project.prototype.toHtml = function() {
     return $newArticle;
 };
 
+projectsArray.sort(function(curElem, nextElem) {
+    return (new Date(nextElem.creation)) - (new Date(curElem.creation));
+});
+
 projectsArray.forEach(function(ele) {
     project.push(new Project(ele));
+});
+
+project.forEach(function(a) {
+  $('#projectHome').append(a.toHtml());
 });
