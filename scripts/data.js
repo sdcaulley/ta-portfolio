@@ -1,4 +1,4 @@
-var projectsArray = [
+const projectsArray = [
     {title: 'Guessing Game',
     creation: '2016-07-25',
     image: 'img/guessing-game.png',
