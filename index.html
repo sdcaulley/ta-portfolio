@@ -26,29 +26,21 @@
       </ul>
     </nav>
     <main class="flex-container">
-      <article class="desktop-view">
-        <h1><a href="https://sdcaulley.github.io/guessing-game/">Guessing Game</a></h1>
-        <img src="img/guessing-game.png" alt="screen shot of Guessing Game application" />
-        <p>
-          My first coding project.  There are a series of questions asked and a score generated.  It seemed huge at the time.
-        </p>
-      </article>
-      <hr />
-      <article class="desktop-view">
-        <h1><a href="https://sdcaulley.github.io/cookie-stand/">Cookie Stand</a></h1>
-        <img src="img/cookie-stand.png" alt="screen shot of Cookie Store application" />
-        <p>
-          My second coding project.  This was an exercise introducing objects, and object constructors.
-        </p>
-      </article>
-      <hr />
-      <article class="desktop-view">
-        <h1><a href="https://sdcaulley.github.io/market-analysis-app/">Bus Mall</a></h1>
-        <img src="img/bus-mall.png" alt="screen shot of Bus Mall application" />
-        <p>
-          My third coding project.  This added a library - chart.js - and local storage.
-        </p>
-      </article>
+      <section id="projectHome">
+        <article class="template" data-category="cat">
+          <header>
+            <h1><a href="">Title</a></h1>
+            <div class="byline">
+              published <time pubdate datetime="2000-01-01">Publish Time</time>
+            </div>
+          </header>
+          <img src="" alt=""/>
+          <section class="article-body"></section>
+        </article>
+      </section>
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
