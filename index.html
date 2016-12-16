@@ -15,18 +15,18 @@
       <h2>Code Fellows TA</h2>
       <h2>Developer Extraordinaire</h2>
     </header>
-    <nav>
+    <nav class="main-nav">
       <div class="icon-menu"></div>
       <ul>
-        <li id="home" class="icon-home"><a href="index.html"> Home</a></li>
-        <li id="about" class="icon-user"><a href="about.html"> About</a></li>
-        <li id="twitter" class="icon-twitter"><a href="https://twitter.com/sdcaulley"> Twitter</a></li>
-        <li id="github" class="icon-github"><a href="https://github.com/sdcaulley"> GitHub</a></li>
-        <li id="linked-in"class="icon-linkedin"><a href="https://www.linkedin.com/in/sdcaulley"> LinkedIn</a></li>
+        <li class="tab" data-content="projectHome" ><a href="#" class="icon-home"> Home</a></li>
+        <li class="tab" data-content="about" ><a href="#" class="icon-user"> About</a></li>
+        <li id="twitter" ><a href="https://twitter.com/sdcaulley" class="icon-twitter"> Twitter</a></li>
+        <li id="github" ><a href="https://github.com/sdcaulley" class="icon-github"> GitHub</a></li>
+        <li id="linked-in"><a href="https://www.linkedin.com/in/sdcaulley" class="icon-linkedin"> LinkedIn</a></li>
       </ul>
     </nav>
     <main class="flex-container">
-      <section id="projectHome">
+      <section id="projectHome" class="tab-content">
         <article class="template" data-category="cat">
           <header>
             <h1><a href="">Title</a></h1>
@@ -38,9 +38,13 @@
           <section class="article-body"></section>
         </article>
       </section>
+      <section id="about" class="tab-content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="scripts/data.js"></script>
-    <script src="scripts/app.js"></script>
+    <script src="scripts/model/data.js"></script>
+    <script src="scripts/model/app.js"></script>
+    <script src="scripts/view/appView.js"></script>
   </body>
 </html>

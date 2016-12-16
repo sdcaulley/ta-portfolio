@@ -1,4 +1,6 @@
-const Project = function(opts) {
+var project = [];
+
+var Project = function(opts) {
     this.title = opts.title;
     this.creation = opts.creation;
     this.image = opts.image;
@@ -8,7 +10,7 @@ const Project = function(opts) {
 };
 
 Project.prototype.toHtml = function() {
-    let $newArticle = $('article.template').clone();
+    var $newArticle = $('article.template').clone();
 
     $newArticle.find('time[pubdate]').attr('title', this.creation);
     $newArticle.find('time').html('about ' + parseInt((new Date() - new Date(this.creation))/60/60/24/1000) + ' days ago');
@@ -20,6 +22,14 @@ Project.prototype.toHtml = function() {
     return $newArticle;
 };
 
-projectsArray.sort((curElem, nextElem) => new Date(nextElem.creation) - new Date(curElem.creation))
-  .map(project => new Project(project)).forEach(a => $('#projectHome')
-  .append(a.toHtml()));
+projectsArray.sort(function(curElem, nextElem) {
+    return (new Date(nextElem.creation)) - (new Date(curElem.creation));
+});
+
+projectsArray.forEach(function(ele) {
+    project.push(new Project(ele));
+});
+
+project.forEach(function(a) {
+  $('#projectHome').append(a.toHtml());
+});
