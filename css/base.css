@@ -39,6 +39,7 @@ img {
 
 article {
   margin: 0.5em;
+  display: inline-block;
 }
 
 nav a {

@@ -19,7 +19,7 @@ Project.prototype.toHtml = function() {
     $newArticle.find('.article-body').html(this.description);
     $newArticle.find('img').attr('src', this.image).attr('alt', this.alt);
 
-    $newArticle.removeAttr('class');
+    $newArticle.removeAttr('class').addClass('desktop-view');
     return $newArticle;
 };
 
