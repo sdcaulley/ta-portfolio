@@ -1,0 +1,23 @@
+const projectsArray = [
+    {title: 'Guessing Game',
+        category: 'javascript',
+        creation: '2016-07-25',
+        image: 'img/guessing-game.png',
+        alt: 'screen shot of Guessing Game application',
+        description: '<p>My first coding project.  There are a series of questions asked and a score generated.  It seemed huge at the time.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+        href: 'https://sdcaulley.github.io/guessing-game/'},
+    {title: 'Cookie Stand',
+        category: 'html',
+        creation: '2016-08-09',
+        image: 'img/cookie-stand.png',
+        alt: 'screen shot of Cookie Store application',
+        description: '<p>My second coding project.  This was an exercise introducing objects, and object constructors.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+        href: 'https://sdcaulley.github.io/cookie-stand/'},
+    {title: 'Bus Mall',
+        category: 'css',
+        creation: '2016-09-05',
+        image: 'img/bus-mall.png',
+        alt: 'screen shot of Bus Mall application',
+        description: '<p>My third coding project.  This added a library - chart.js - and local storage.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',
+        href: 'https://sdcaulley.github.io/market-analysis-app/'}
+];
