@@ -16,8 +16,32 @@ Project.prototype.toHtml = function() {
 };
 
 Project.fetchAll = function() {
-  $.ajax('/scripts/model/data.json').done(function (response){
-    Project.loadAll(response);
+  if (localStorage.projectItem) {
+    $.ajax({
+      type: 'HEAD',
+      url: '/scripts/model/data.json',
+      success: function(data, message, xhr) {
+        var eTag = xhr.getResponseHeader('eTag');
+        if (!localStorage.eTag || eTag !== localStorage.eTag) {
+          localStorage.eTag = eTag;
+          Project.getAll();
+          Project.loadAll(data);
+          projectView.init();
+        } else {
+          Project.loadAll(JSON.parse(localStorage.projectItem));
+          projectView.init();
+        }
+      }
+    });
+  } else {
+    Project.getAll();
+  }
+};
+
+Project.getAll = function() {
+  $.getJSON('/scripts/model/data.json', function(responseData) {
+    localStorage.projectItem = JSON.stringify(responseData);
+    Project.loadAll(responseData);
     projectView.init();
   });
 };
