@@ -43,5 +43,6 @@ nav:hover ul {
   }
   .desktop-view {
     width: 30%;
+    display: inline-block;
   }
 }

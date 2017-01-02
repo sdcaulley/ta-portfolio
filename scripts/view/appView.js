@@ -52,10 +52,13 @@ projectView.setTeasers = function() {
 };
 
 projectView.init = function() {
+  Project.all.forEach(function(a) {
+    $('#projectHome').append(a.toHtml());
+  });
     projectView.tabView();
     projectView.setTeasers();
     projectView.populateFilters();
     projectView.handleCategoryFilter();
 };
 
-projectView.init();
+Project.fetchAll();
