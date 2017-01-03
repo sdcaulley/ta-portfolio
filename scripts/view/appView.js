@@ -1,22 +1,22 @@
-var projectView = {};
+const projectView = {};
 
-projectView.populateFilters = function() {
+projectView.populateFilters = () => {
     $('article').not('.template').each(function() {
-        var category = $(this).attr('data-category');
-        var optionTag = '<option value="' + category + '">' + category + '</option>';
+        let category = $(this).attr('data-category');
+        let optionTag = '<option value="' + category + '">' + category + '</option>';
         if ($('#category-filter option[value="' + category + '"]').length === 0) {
             $('#category-filter').append(optionTag);
         }
     });
 };
 
-projectView.handleCategoryFilter = function() {
+projectView.handleCategoryFilter = () => {
     $('#category-filter').on('change', function() {
         if ($(this).val()) {
             $('article').hide();
             $('article').not('.template').each(function() {
-                var category = $(this).attr('data-category');
-                var selector = $('#category-filter').val();
+                let category = $(this).attr('data-category');
+                let selector = $('#category-filter').val();
                 if (category === selector) {
                     $(this).fadeIn(1500);
                 }
@@ -28,16 +28,16 @@ projectView.handleCategoryFilter = function() {
     });
 };
 
-projectView.tabView = function() {
+projectView.tabView = () => {
     $('.main-nav').on('click', '.tab', function() {
         $('.tab-content').hide();
-        var content = $(this).attr('data-content');
+        let content = $(this).attr('data-content');
         $('#' + content).fadeIn(1500);
     });
     $('.main-nav .tab:first').click();
 };
 
-projectView.setTeasers = function() {
+projectView.setTeasers = () => {
     $('.article-body *:nth-of-type(n+2)').hide();
     $('.read-on').on('click', function(e) {
         e.preventDefault();
@@ -51,7 +51,7 @@ projectView.setTeasers = function() {
     });
 };
 
-projectView.init = function() {
+projectView.init = () => {
   Project.all.forEach(function(a) {
     $('#projectHome').append(a.toHtml());
   });

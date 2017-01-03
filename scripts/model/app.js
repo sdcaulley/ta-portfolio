@@ -1,4 +1,4 @@
-var Project = function(opts) {
+const Project = function(opts) {
   for (keys in opts) {
   this[keys] = opts[keys];
   }
@@ -9,19 +9,19 @@ Project.all = [];
 Project.prototype.toHtml = function() {
     this.daysAgo = parseInt((new Date() - new Date(this.creation))/60/60/24/1000);
     this.publishedOn = 'about ' + this.daysAgo + 'days ago';
-    var source = $('#template').html();
-    var template = Handlebars.compile(source);
-    var html = template(this);
+    let source = $('#template').html();
+    let template = Handlebars.compile(source);
+    let html = template(this);
     return html;
 };
 
-Project.fetchAll = function() {
+Project.fetchAll = () => {
   if (localStorage.projectItem) {
     $.ajax({
       type: 'HEAD',
       url: '/scripts/model/data.json',
       success: function(data, message, xhr) {
-        var eTag = xhr.getResponseHeader('eTag');
+        let eTag = xhr.getResponseHeader('eTag');
         if (!localStorage.eTag || eTag !== localStorage.eTag) {
           localStorage.eTag = eTag;
           Project.getAll();
@@ -38,7 +38,7 @@ Project.fetchAll = function() {
   }
 };
 
-Project.getAll = function() {
+Project.getAll = () => {
   $.getJSON('/scripts/model/data.json', function(responseData) {
     localStorage.projectItem = JSON.stringify(responseData);
     Project.loadAll(responseData);
@@ -46,7 +46,7 @@ Project.getAll = function() {
   });
 };
 
-Project.loadAll = function(input) {
+Project.loadAll = input => {
   input.sort(function(curElem, nextElem) {
       return (new Date(nextElem.creation)) - (new Date(curElem.creation));
     }).forEach(function(ele) {
